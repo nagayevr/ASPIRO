@@ -84,7 +84,7 @@ function makeChart(width) {
   chart.innerHTML = `
     <svg viewBox="0 0 ${width} ${height}" style="display:block;width:100%;height:auto"
       role="img" aria-labelledby="demo-chart-title demo-chart-description">
-      <title id="demo-chart-title">Петля «поток — объём»</title>
+      <title id="demo-chart-title">${document.documentElement.lang === 'en' ? 'Flow-volume loop' : 'Петля «поток — объём»'}</title>
       <desc id="demo-chart-description"></desc>
       <defs>
         <linearGradient id="demo-flow-fill" x1="0" x2="0" y1="0" y2="1">
@@ -95,8 +95,8 @@ function makeChart(width) {
       <g fill="${labelColor}" font-size="14" aria-hidden="true">
         ${vertical}
         ${horizontal}
-        <text x="${bounds.left}" y="15">Поток, л/с</text>
-        <text x="${bounds.right}" y="${height - 5}" text-anchor="end">Объём, л</text>
+        <text x="${bounds.left}" y="15">${document.documentElement.lang === 'en' ? 'Flow, L/s' : 'Поток, л/с'}</text>
+        <text x="${bounds.right}" y="${height - 5}" text-anchor="end">${document.documentElement.lang === 'en' ? 'Volume, L' : 'Объём, л'}</text>
       </g>
       <path data-demo-area fill="url(#demo-flow-fill)" />
       <path data-demo-inspiration fill="none" stroke="${lineColor}" stroke-opacity=".45"
