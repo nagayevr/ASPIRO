@@ -9,6 +9,7 @@
   <link rel="icon" href="mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="demo.js" defer></script>
+  <script src="lang.js" defer></script>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" class="icons" aria-hidden="true">
@@ -32,7 +33,10 @@
         <a href="#demo">Демо</a>
         <a href="#roadmap">Дорожная карта</a>
       </nav>
-      <a class="button button-outline header-action" href="#demo"><svg class="icon"><use href="#i-play"/></svg>Открыть демо</a>
+      <div class="header-tools">
+        <button type="button" class="language-toggle" id="language-toggle" aria-label="Switch language">EN</button>
+        <a class="button button-outline header-action" href="#demo"><svg class="icon"><use href="#i-play"/></svg>Открыть демо</a>
+      </div>
     </div>
   </header>
   <main id="main">
@@ -129,6 +133,10 @@
     <div class="shell footer-inner">
       <a class="brand" href="#top" aria-label="ASPIRO — наверх"><span class="brand-mark"><svg><use href="#i-logo"/></svg></span><span>ASPIRO</span></a>
       <p>Исследовательский проект по портативной спирометрии</p>
+      <section class="footer-contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Контактные данные</h2>
+        <p><strong>Rustem Nagayev</strong><br>Школа NIS IB<br>Астана, Казахстан<br>Email: <a href="mailto:nagayevrustem@gmail.com">nagayevrustem@gmail.com</a></p>
+      </section>
     </div>
   </footer>
 </body>
