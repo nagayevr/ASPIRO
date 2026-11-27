@@ -116,7 +116,7 @@ function makeChart(width) {
 }
 
 function format(value, decimals) {
-  return new Intl.NumberFormat('ru-RU', {
+  return new Intl.NumberFormat(document.documentElement.lang === 'en' ? 'en-US' : 'ru-RU', {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
   }).format(value);
@@ -164,8 +164,8 @@ if (chart && runButton && resetButton) {
   function mapSampleToChart() {
     coordinates = sample.points.map(coordinate);
     plot.description.textContent = sample.hasCough
-      ? 'Синтетическая кривая выдоха и вдоха. Резкий всплеск на выдохе отмечен жёлтой точкой.'
-      : 'Синтетическая кривая. Выдох проходит выше нулевой линии потока, а вдох — ниже.';
+      ? document.documentElement.lang === 'en' ? 'Synthetic exhalation and inhalation curve. A sharp exhalation spike is marked with a yellow dot.' : 'Синтетическая кривая выдоха и вдоха. Резкий всплеск на выдохе отмечен жёлтой точкой.'
+      : document.documentElement.lang === 'en' ? 'Synthetic curve. Exhalation is above the zero-flow line and inhalation is below it.' : 'Синтетическая кривая. Выдох проходит выше нулевой линии потока, а вдох — ниже.';
   }
 
   function draw(lastIndex) {
@@ -193,9 +193,9 @@ if (chart && runButton && resetButton) {
     showProgress(100);
     showMetrics(sample);
     if (sample.hasCough) {
-      showFeedback('artifact', 'В примере кашель на 1,4 с. Показатели этой попытки скрыты.');
+      showFeedback('artifact', document.documentElement.lang === 'en' ? 'A cough occurs at 1.4 s in this example. Metrics for this attempt are hidden.' : 'В примере кашель на 1,4 с. Показатели этой попытки скрыты.');
     } else {
-      showFeedback('ready', 'В этом примере выдох без артефактов.');
+      showFeedback('ready', document.documentElement.lang === 'en' ? 'This example shows an exhalation without artifacts.' : 'В этом примере выдох без артефактов.');
     }
     runButton.disabled = false;
   }
@@ -213,7 +213,7 @@ if (chart && runButton && resetButton) {
       return;
     }
     runButton.disabled = true;
-    showFeedback('running', 'Воспроизведение примера…');
+    showFeedback('running', document.documentElement.lang === 'en' ? 'Playing example…' : 'Воспроизведение примера…');
     showMetrics(null);
     showProgress(0);
     draw(0);
@@ -234,6 +234,7 @@ if (chart && runButton && resetButton) {
   resetButton.addEventListener('click', preview);
   scenario?.addEventListener('change', preview);
   preview();
+  window.addEventListener('aspiro-language-change', () => { plot = makeChart(width); mapSampleToChart(); finish(); });
 
   if (typeof ResizeObserver === 'function') {
     const observer = new ResizeObserver(([entry]) => {
