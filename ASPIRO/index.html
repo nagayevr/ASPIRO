@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f9f5">
+  <meta name="description" content="ASPIRO — проект портативного спирометра и веб-интерфейса для наблюдения за функцией лёгких. Интерактивное демо на синтетических данных.">
+  <title>ASPIRO — портативная спирометрия</title>
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="icons" aria-hidden="true">
+    <symbol id="i-logo" viewBox="0 0 32 32"><path d="M5 16h5l4-7 4 14 4-7h5"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s7-3.5 7-10V5l-7-3-7 3v7c0 6.5 7 10 7 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 8h12a2.5 2.5 0 1 0-2.3-3.5M3 12h16a2.5 2.5 0 1 1-2.3 3.5M3 16h8a2.5 2.5 0 1 1-2.3 3.5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7V5Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M5 11a7 7 0 1 1 1.8 6M5 5v6h6"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 1v4m6-4v4M9 19v4m6-4v4M1 9h4m-4 6h4m14-6h4m-4 6h4"/><rect x="9" y="9" width="6" height="6" rx="1"/></symbol>
+    <symbol id="i-signal" viewBox="0 0 24 24"><path d="M3 19V5m0 14h18M7 14l4-5 4 3 5-6"/></symbol>
+  </svg>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="ASPIRO — на главную">
+        <span class="brand-mark"><svg><use href="#i-logo"/></svg></span><span>ASPIRO</span>
+      </a>
+      <nav class="main-nav" aria-label="Навигация по сайту">
+        <a href="#technology">Технология</a>
+        <a href="#demo">Демо</a>
+        <a href="#roadmap">Дорожная карта</a>
+      </nav>
+      <a class="button button-outline header-action" href="#demo"><svg class="icon"><use href="#i-play"/></svg>Открыть демо</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero shell" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow project-status"><span></span>Исследовательский прототип</p>
+        <h1 id="hero-title">Портативная <em>спирометрия</em></h1>
+        <p class="hero-description">ASPIRO объединяет портативный спирометр и веб-интерфейс, чтобы изучать форму выдоха, качество измерений и их связь с окружающей средой.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#demo"><svg class="icon"><use href="#i-play"/></svg>Запустить демо</a>
+          <a class="button button-outline" href="#technology">Как это работает</a>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <img src="aspiro-device.webp" alt="Концепт: белый портативный спирометр с экраном и графитовым мундштуком" width="1536" height="1024" fetchpriority="high">
+        <figcaption><span>ASPIRO</span><span>Концепт устройства</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="shell overview" aria-label="Возможности проекта">
+      <article class="overview-item">
+        <span class="feature-icon"><svg class="icon"><use href="#i-pulse"/></svg></span>
+        <div><h2>Анализ формы выдоха</h2><p>Кривая «поток — объём» показывает, как меняется поток воздуха в течение попытки.</p></div>
+      </article>
+      <article class="overview-item">
+        <span class="feature-icon"><svg class="icon"><use href="#i-shield"/></svg></span>
+        <div><h2>Контроль качества</h2><p>Проверка сигнала помогает заметить кашель, замедленный старт или обрыв выдоха.</p></div>
+      </article>
+      <article class="overview-item">
+        <span class="feature-icon"><svg class="icon"><use href="#i-wind"/></svg></span>
+        <div><h2>Качество воздуха</h2><p>Индекс качества воздуха (AQI) и уровень PM₂.₅ помогут сопоставлять измерения с состоянием среды.</p></div>
+      </article>
+    </section>
+
+    <section class="section shell" id="demo" aria-labelledby="demo-title">
+      <div class="section-heading">
+        <div><p class="eyebrow kicker">Интерактивное демо</p><h2 id="demo-title">Спирометрия в действии</h2></div>
+        <p>Сравните два сценария и посмотрите, как форма выдоха влияет на кривую и оценку качества попытки.</p>
+      </div>
+      <div class="demo-card">
+        <div class="demo-top">
+          <div class="demo-title"><span class="demo-icon"><svg class="icon"><use href="#i-pulse"/></svg></span><div><h3>Кривая «поток — объём»</h3><p>Синтетические данные</p></div></div>
+          <div class="demo-controls">
+            <label for="demo-scenario" class="sr-only">Сценарий выдоха</label>
+            <select id="demo-scenario"><option value="standard">Плавный выдох</option><option value="cough">Выдох с кашлем</option></select>
+            <button type="button" id="demo-run" class="button button-primary" aria-label="Воспроизвести кривую">Воспроизвести</button>
+            <button type="button" id="demo-reset" class="button icon-button" aria-label="Сбросить воспроизведение" title="Сбросить воспроизведение"><svg class="icon"><use href="#i-reset"/></svg></button>
+          </div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-plot"><div id="demo-chart"></div><progress id="demo-progress" max="100" value="100" aria-label="Ход воспроизведения"></progress></div>
+          <div class="metrics" aria-label="Показатели выдоха">
+            <div class="metric"><span>ОФВ₁</span><strong id="demo-fev1">—</strong><small>л за первую секунду</small></div>
+            <div class="metric"><span>ФЖЕЛ</span><strong id="demo-fvc">—</strong><small>л за весь выдох</small></div>
+            <div class="metric"><span>ОФВ₁ / ФЖЕЛ</span><strong id="demo-ratio">—</strong><small>доля объёма</small></div>
+            <div class="metric"><span>ПСВ</span><strong id="demo-pef">—</strong><small>л/с · пиковый поток</small></div>
+          </div>
+        </div>
+        <div class="demo-status"><svg class="icon"><use href="#i-shield"/></svg><span id="demo-feedback" role="status" aria-live="polite"></span></div>
+        <noscript><p class="no-js">Для воспроизведения кривой включите JavaScript в браузере.</p></noscript>
+      </div>
+      <p class="demo-note">Демонстрация предназначена для знакомства с интерфейсом. Для оценки здоровья нужны клинические измерения.</p>
+    </section>
+
+    <section class="technology section" id="technology" aria-labelledby="technology-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><p class="eyebrow kicker">Технология</p><h2 id="technology-title">От выдоха к данным</h2></div>
+          <p>В проекте предусмотрены 3D-печатная трубка Вентури, цифровые датчики и передача измерений в приложение.</p>
+        </div>
+        <div class="technology-grid">
+          <article class="technology-card"><span class="feature-icon"><svg class="icon"><use href="#i-wind"/></svg></span><h3>Трубка Вентури</h3><p>Сужение трубки создаёт перепад давления. Цифровой датчик регистрирует его, чтобы оценить скорость воздушного потока.</p></article>
+          <article class="technology-card"><span class="feature-icon"><svg class="icon"><use href="#i-chip"/></svg></span><h3>ESP32 и BME280</h3><p>ESP32 обрабатывает сигнал. Измерения температуры, влажности и давления с BME280 нужны для поправки объёма по BTPS.</p></article>
+          <article class="technology-card"><span class="feature-icon"><svg class="icon"><use href="#i-signal"/></svg></span><h3>Веб-интерфейс</h3><p>По Bluetooth измерения планируется передавать в приложение. Модель машинного обучения будет анализировать форму кривой, а интерфейс покажет качество попытки.</p></article>
+        </div>
+        <p class="cost"><strong>&lt; $45</strong><span>Целевая стоимость компонентов портативного прототипа</span></p>
+      </div>
+    </section>
+
+    <section class="section shell roadmap" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-heading">
+        <div><p class="eyebrow kicker">Дорожная карта</p><h2 id="roadmap-title">Четыре недели до прототипа</h2></div>
+        <p>План работ из проектного документа ASPIRO.</p>
+      </div>
+      <ol class="roadmap-list">
+        <li><span>Неделя 1</span><h3>Детали и 3D-модель</h3><p>Подобрать компоненты, спроектировать и напечатать трубку Вентури.</p></li>
+        <li><span>Неделя 2</span><h3>Прошивка и калибровка</h3><p>Настроить сбор сигнала и сверить объём по калибровочному шприцу.</p></li>
+        <li><span>Неделя 3</span><h3>Анализ кривых</h3><p>Подготовить открытые данные спирометрии и обучить модель анализа формы кривой.</p></li>
+        <li><span>Неделя 4</span><h3>Интеграция и испытания</h3><p>Связать устройство с приложением и проверить весь путь измерения.</p></li>
+      </ol>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="brand" href="#top" aria-label="ASPIRO — наверх"><span class="brand-mark"><svg><use href="#i-logo"/></svg></span><span>ASPIRO</span></a>
+      <p>Исследовательский проект по портативной спирометрии</p>
+    </div>
+  </footer>
+</body>
+</html>
